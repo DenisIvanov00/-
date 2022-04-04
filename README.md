@@ -8,8 +8,29 @@
 
 1. Поскольку мы не можем заранее знать размер итогового массива, нам необходимо найти его размер:
 
+>>
+    for (int i = 0; i < firstArr.Length; i++)
+        {
+            if (firstArr[i].Length <= 3)
+            newArrSize++;
+        }
+>>
 2.  Теперь, зная нужное число элементов массива, мы можем создать его:
+>>
+    string[] newArr = new string[newArrSize];
 
 3. Пробегаем по исходному массиву, попутно перекидывая удовлетворяющие условию задачи элементы в итоговый массив:
-
+>>
+    for (int i = 0; i < firstArr.Length; i++)
+        {
+            if (firstArr[i].Length <= 3)
+            {
+                newArr[counter] = firstArr[i];
+                counter++;
+            }
+        }
+>>
 4. Выводим массив:
+>>
+    Write(String.Join(" ", newArr));
+>> 
